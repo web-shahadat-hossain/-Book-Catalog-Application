@@ -1,9 +1,11 @@
+import { Fragment } from "react";
+import MainLayout from "./layouts/MainLayout";
+
 function App() {
   return (
-    <>
-      <button className="btn btn-primary">Button</button>
-      <h1>hello</h1>
-    </>
+    <Fragment>
+      <MainLayout />
+    </Fragment>
   );
 }
 

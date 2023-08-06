@@ -1,0 +1,138 @@
+{
+  "books": [
+    {
+      "_id": "1",
+      "Title": "To Kill a Mockingbird",
+      "Author": "Harper Lee",
+      "Genre": "Fiction",
+      "PublicationDate": "July 11, 1960"
+    },
+
+    {
+      "_id": "3",
+      "Title": "The Great Gatsby",
+      "Author": "F. Scott Fitzgerald",
+      "Genre": "Fiction",
+      "PublicationDate": "April 10, 1925"
+    },
+    {
+      "_id": "4",
+      "Title": "Harry Potter and the Sorcerer's Stone",
+      "Author": "J.K. Rowling",
+      "Genre": "Fantasy",
+      "PublicationDate": "June 26, 1997"
+    },
+    {
+      "_id": "5",
+      "Title": "Pride and Prejudice",
+      "Author": "Jane Austen",
+      "Genre": "Romance",
+      "PublicationDate": "January 28, 1813"
+    },
+    {
+      "_id": "6",
+      "Title": "The Lord of the Rings: The Fellowship of the Ring",
+      "Author": "J.R.R. Tolkien",
+      "Genre": "Fantasy",
+      "PublicationDate": "July 29, 1954"
+    },
+    {
+      "_id": "7",
+      "Title": "Brave New World",
+      "Author": "Aldous Huxley",
+      "Genre": "Science Fiction",
+      "PublicationDate": "February 25, 1932"
+    },
+    {
+      "_id": "8",
+      "Title": "The Catcher in the Rye",
+      "Author": "J.D. Salinger",
+      "Genre": "Fiction",
+      "PublicationDate": "July 16, 1951"
+    },
+    {
+      "_id": "9",
+      "Title": "The Hobbit",
+      "Author": "J.R.R. Tolkien",
+      "Genre": "Fantasy",
+      "PublicationDate": "September 21, 1937"
+    },
+    {
+      "_id": "10",
+      "Title": "To the Lighthouse",
+      "Author": "Virginia Woolf",
+      "Genre": "Fiction",
+      "PublicationDate": "May 5, 1927"
+    },
+    {
+      "_id": "11",
+      "Title": "Fahrenheit 451",
+      "Author": "Ray Bradbury",
+      "Genre": "Science Fiction",
+      "PublicationDate": "October 19, 1953"
+    },
+    {
+      "_id": "12",
+      "Title": "Moby-Dick",
+      "Author": "Herman Melville",
+      "Genre": "Adventure",
+      "PublicationDate": "October 18, 1851"
+    },
+    {
+      "_id": "13",
+      "Title": "The Picture of Dorian Gray",
+      "Author": "Oscar Wilde",
+      "Genre": "Fiction",
+      "PublicationDate": "July 1, 1890"
+    },
+    {
+      "_id": "14",
+      "Title": "One Hundred Years of Solitude",
+      "Author": "Gabriel Garcia Marquez",
+      "Genre": "Magical Realism",
+      "PublicationDate": "June 30, 1967"
+    },
+    {
+      "_id": "15",
+      "Title": "The Hitchhiker's Guide to the Galaxy",
+      "Author": "Douglas Adams",
+      "Genre": "Science Fiction",
+      "PublicationDate": "October 12, 1979"
+    },
+    {
+      "_id": "16",
+      "Title": "The Alchemist",
+      "Author": "Paulo Coelho",
+      "Genre": "Fantasy",
+      "PublicationDate": "1988"
+    },
+    {
+      "_id": "17",
+      "Title": "The Handmaid's Tale",
+      "Author": "Margaret Atwood",
+      "Genre": "Dystopian",
+      "PublicationDate": "September 17, 1985"
+    },
+    {
+      "_id": "18",
+      "Title": "Siddhartha",
+      "Author": "Hermann Hesse",
+      "Genre": "Philosophical Fiction",
+      "PublicationDate": "1922"
+    },
+    {
+      "_id": "19",
+      "Title": "The Chronicles of Narnia: The Lion, the Witch, and the Wardrobe",
+      "Author": "C.S. Lewis",
+      "Genre": "Fantasy",
+      "PublicationDate": "October 16, 1950"
+    },
+    {
+      "_id": "20",
+      "Title": "Jane Eyre",
+      "Author": "Charlotte Bronte",
+      "Genre": "Gothic Fiction",
+      "PublicationDate": "October 16, 1847"
+    }
+  ]
+}

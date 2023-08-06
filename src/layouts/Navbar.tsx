@@ -31,11 +31,13 @@ const Navbar = () => {
               </li>
 
               <li>
-                <a>All Books</a>
+                <Link to="/all-books">All Books</Link>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">BookStack</a>
+          <Link to="/" className="btn btn-ghost normal-case text-xl">
+            BookStack
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -44,12 +46,17 @@ const Navbar = () => {
             </li>
 
             <li>
-              <a>All Books</a>
+              <Link to="/all-books">All Books</Link>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn bg-primary text-white hover:bg-black">Sign In</a>
+          <Link
+            to="/login"
+            className="btn bg-primary text-white hover:bg-black"
+          >
+            Sign In
+          </Link>
         </div>
       </div>
     </section>

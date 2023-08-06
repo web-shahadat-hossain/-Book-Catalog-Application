@@ -1,7 +1,9 @@
 import Card from "../components/Card";
 import { useState, Fragment, useEffect } from "react";
+import Navbar from "../layouts/Navbar";
+import Footer from "../layouts/Footer";
 
-const Home = () => {
+const AllBooks = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -13,11 +15,13 @@ const Home = () => {
   }, []);
   return (
     <Fragment>
+      <Navbar />
       <section className="max-w-[1200px] mx-auto   my-24">
-        <Card books={books?.slice(0, 10)} />
+        <Card books={books} />
       </section>
+      <Footer />
     </Fragment>
   );
 };
 
-export default Home;
+export default AllBooks;

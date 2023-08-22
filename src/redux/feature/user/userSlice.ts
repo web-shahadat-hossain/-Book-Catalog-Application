@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../lib/firebase";
 
 interface ICredentials {
@@ -33,6 +33,14 @@ export const createUser = createAsyncThunk(
   }
 );
 
+export const loginUser = createAsyncThunk(
+  "user-login",
+  async ({ email, password }: ICredentials) => {
+    const data = await signInWithEmailAndPassword(auth, email, password);
+    return data.user.email;
+  }
+);
+
 const userSlice = createSlice({
   name: "user",
   initialState,
@@ -52,6 +60,24 @@ const userSlice = createSlice({
         state.user.email = action.payload;
       })
       .addCase(createUser.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message!;
+        state.isError = true;
+        state.user.email = null;
+      })
+      .addCase(loginUser.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+        state.isError = false;
+        state.user.email = null;
+      })
+      .addCase(loginUser.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.isError = false;
+        state.user.email = action.payload;
+      })
+      .addCase(loginUser.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message!;
         state.isError = true;

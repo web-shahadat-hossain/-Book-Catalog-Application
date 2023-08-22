@@ -1,8 +1,38 @@
+import { FormEvent } from "react";
 import { Link } from "react-router-dom";
+import { useAppDispatch } from "../redux/hook";
+import { createUser } from "../redux/feature/user/userSlice";
+import { toast } from "react-toastify";
 
 const SignUpFrom = () => {
+
+  const  dispatch= useAppDispatch()
+  const onsubmitHandler = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formElement = e.currentTarget as HTMLFormElement;
+    const data = new FormData(formElement);
+  
+    
+
+    const email = data.get('email') as string;
+    const password = data.get('password') as string;
+    const confirmPassword = data.get('confirm-password') as string;
+
+    if(password !==confirmPassword){
+      toast.warn("Password not matched!");
+
+    }else{
+     dispatch(createUser({ email, password }));
+   
+      formElement.reset();
+    }
+
+
+  
+  };
+
   return (
-    <form className="space-y-4 md:space-y-6" action="#">
+    <form className="space-y-4 md:space-y-6" onSubmit={onsubmitHandler}>
       <div>
         <label
           htmlFor="email"
@@ -78,7 +108,7 @@ const SignUpFrom = () => {
       </div>
       <button
         type="submit"
-        className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+        className="w-full text-white bg-[blue] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
       >
         Create an account
       </button>

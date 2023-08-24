@@ -1,6 +1,19 @@
 import { Link } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../redux/hook";
+import { auth } from "../lib/firebase";
+import { signOut } from "firebase/auth";
+import { setUser } from "../redux/feature/user/userSlice";
 
 const Navbar = () => {
+  const {user}= useAppSelector(state=>state.user)
+
+const dispatch=useAppDispatch()
+  const logoutHandler= ()=>{
+    signOut(auth).then(() => {
+    dispatch(setUser(null))
+    })
+  }
+
   return (
     <section className="bg-base-100 shadow-sm border-blue-300 ">
       <div className="navbar max-w-[1200px] mx-auto">
@@ -51,12 +64,20 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link
+          {
+            !user.email &&  <Link
             to="/login"
             className="btn bg-primary text-white hover:bg-black"
           >
             Sign In
           </Link>
+          }
+          {
+       
+          
+       user.email &&   <button onClick={logoutHandler}  className="btn bg-primary text-white hover:bg-black">LogOut</button>
+          }
+         
         </div>
       </div>
     </section>

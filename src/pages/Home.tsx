@@ -1,22 +1,18 @@
 import Card from "../components/Card";
-import { useState, Fragment, useEffect } from "react";
+import { useAllBooksGetQuery } from "../redux/api/apiSlice";
 
 const Home = () => {
-  const [books, setBooks] = useState([]);
 
-  useEffect(() => {
-    fetch("books.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setBooks(data?.books);
-      });
-  }, []);
+  const {data, isLoading}= useAllBooksGetQuery(undefined);
+
+  console.log(isLoading);
+  const booksData = data && data.data ? [...data.data].reverse().slice(0, 10) : [];
   return (
-    <Fragment>
+    <>
       <section className="max-w-[1200px] mx-auto   my-24">
-        <Card books={books?.slice(0, 10)} />
+        <Card books={booksData} />
       </section>
-    </Fragment>
+    </>
   );
 };
 

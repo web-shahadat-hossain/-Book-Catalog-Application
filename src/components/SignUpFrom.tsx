@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { useAppDispatch } from "../redux/hook";
 import { createUser } from "../redux/feature/user/userSlice";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const SignUpFrom = () => {
+  const navigate = useNavigate();
 
   const  dispatch= useAppDispatch()
   const onsubmitHandler = (e: FormEvent<HTMLFormElement>) => {
@@ -23,7 +25,7 @@ const SignUpFrom = () => {
 
     }else{
      dispatch(createUser({ email, password }));
-   
+     navigate("/")
       formElement.reset();
     }
 

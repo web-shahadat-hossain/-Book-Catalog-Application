@@ -5,8 +5,11 @@ import { signOut } from "firebase/auth";
 import { setUser } from "../redux/feature/user/userSlice";
 
 const Navbar = () => {
-  const {user}= useAppSelector(state=>state.user)
-
+  const {user, isLoading, isError, error}= useAppSelector(state=>state.user);
+  console.log(isLoading);
+console.log(user);
+console.log(isError);
+console.log(error);
 const dispatch=useAppDispatch()
   const logoutHandler= ()=>{
     signOut(auth).then(() => {
@@ -46,6 +49,13 @@ const dispatch=useAppDispatch()
               <li>
                 <Link to="/all-books">All Books</Link>
               </li>
+              <li>
+              {
+       
+       user.email &&   <Link to="/add-new-book">Add New Book</Link>
+
+          }
+              </li>
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost normal-case text-xl">
@@ -60,6 +70,14 @@ const dispatch=useAppDispatch()
 
             <li>
               <Link to="/all-books">All Books</Link>
+            </li>
+            <li>
+              {
+       
+          
+       user.email &&                <Link to="/add-new-book">Add New Book</Link>
+
+          }
             </li>
           </ul>
         </div>

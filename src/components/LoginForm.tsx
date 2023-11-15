@@ -2,18 +2,21 @@ import { FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../redux/hook";
 import { loginUser } from "../redux/feature/user/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const dispatch= useAppDispatch()
+  const navigate = useNavigate();
+
   const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formElement = e.currentTarget as HTMLFormElement;
     const data = new FormData(formElement);
     const email = data.get('email') as string;
     const password = data.get('password') as string;
-  
+  console.log(email);
     dispatch(loginUser({ email, password }));
-  
+    navigate("/")
     formElement.reset();
 
 
